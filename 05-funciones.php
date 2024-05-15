@@ -10,6 +10,9 @@ function mostrarDatos($nombres,$apellidos,$curso,$semestre){
     return $mensaje;
 }
 
+
+
+
 echo obtenerSaludo("Jhon")."\n";
 echo mostrarDatos("Jhon","Acero",
 "backend developer web","tercer semestre");
