@@ -16,6 +16,7 @@
         if($numero2==0) return "no divisible por 0";
         else return $numero1/$numero2;
      }
+     
 ?>
 
 
