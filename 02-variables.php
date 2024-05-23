@@ -7,4 +7,5 @@ $semestre = "Tercer semestre";
 
 echo $nombres." ".$apellidos." ".$curso." ".$semestre ;
 
+
 ?>

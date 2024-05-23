@@ -12,3 +12,4 @@
     echo "La resta es " .$resta. "<br>";
     echo "La multiplicacion es " .$multiplicacion. "<br>";
     echo "La division es " .$division. "<br><h1>";
+?>

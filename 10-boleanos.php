@@ -23,6 +23,7 @@ else {
     echo "\nAun no estas con covid.";
 }
 
+
 //caso 3 , cuenta bancaria
 $saldo = 0;
     if(!($saldo > 0)) {//$saldo <= 0
@@ -31,4 +32,5 @@ $saldo = 0;
     else {
         echo "\nTiene saldo";
     }
+
 ?>

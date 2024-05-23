@@ -22,5 +22,6 @@
 
      echo "El numero mayor es :".$mayor;
 
+     
 
 ?>

@@ -22,6 +22,7 @@ function calcular($operador,$numero1,$numero2) {
 }
 
 
+
 echo obtenerSaludo("Jhon")."\n";
 echo mostrarDatos("Jhon","Acero",
 "backend developer web","tercer semestre");

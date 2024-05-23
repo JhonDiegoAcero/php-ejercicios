@@ -19,6 +19,7 @@ foreach($estudiante as $key=>$value) {
     echo $key." - ".$value."\n";
 }
 
+
 //caso 3
 
 $estudiante1 = 

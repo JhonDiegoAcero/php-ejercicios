@@ -32,4 +32,5 @@ $colorSemafaro = trim(fgets(STDIN));
 echo obtenerMensaje($colorSemafaro);
 
 
+
 ?>

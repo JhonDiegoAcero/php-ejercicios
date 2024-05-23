@@ -7,4 +7,5 @@
     echo "El texto dice ahora ".
     str_replace("terminado","finalizado",$cadena)."<br>";
     echo "</h1>";
+    
 ?>
