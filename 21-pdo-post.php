@@ -23,6 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $Garraspera = array_key_exists("Garraspera",$_POST) ? $_POST['Garraspera'] : "0";
   $Garraspera = $Garraspera == "" ? "0" : $Garraspera;
   $fecha = $_POST['fecha'];
+
+  
+  if (strlen($nombre) <= 3 || strlen($apellido) <= 3) {
+    echo "Ingrese un nombre y apellido de al menos 3 caracteres.";
+    exit;
+  }
+
+
   if (empty($nombre) || empty($apellido) || empty($edad) || empty($talla) || empty($peso)) {
     echo "Todos los campos son obligatorios." ;
   }
