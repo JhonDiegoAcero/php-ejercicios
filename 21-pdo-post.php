@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $Garraspera = $Garraspera == "" ? "0" : $Garraspera;
   $fecha = $_POST['fecha'];
 
-  
+
   if (strlen($nombre) <= 3 || strlen($apellido) <= 3) {
     echo "Ingrese un nombre y apellido de al menos 3 caracteres.";
     exit;
@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password ="root";  
   $dbname = "base_covid";  
   try{
+    
     $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
     $conn->beginTransaction();
     $sql="INSERT INTO `pacientes` (`nombres`, `apellidos`,
@@ -62,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   catch(Exception $e) {
     $conn->rollBack();
+
 
     echo "Error : ".$e->getMessage();
   }
