@@ -1,82 +1,50 @@
-<?php
+</body>
+</html><!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $nombre = $_POST['nombre'];
-  $apellido = $_POST['apellido'];
-  $edad = $_POST['edad'];
-  $talla = $_POST['talla'];
-  $peso = $_POST['peso'];
-  $tos = array_key_exists("tos",$_POST) ? $_POST['tos'] : "0";
-  $tos = $tos == "" ? "0" : $tos;
-  $fiebre = array_key_exists("fiebre",$_POST) ? $_POST['fiebre'] : "0";
-  $fiebre = $fiebre == "" ? "0" : $fiebre;
-  $disnea = array_key_exists("disnea",$_POST) ? $_POST['disnea'] : "0";
-  $disnea = $disnea == "" ? "0" : $disnea;
-  $dolor_muscular = array_key_exists("dolor_muscular",$_POST) ? $_POST['dolor_muscular'] : "0";
-  $dolor_muscular = $dolor_muscular == "" ? "0" : $dolor_muscular;
-  $gripe = array_key_exists("gripe",$_POST) ? $_POST['gripe'] : "0";
-  $gripe = $gripe == "" ? "0" : $gripe;
-  $Presion_alta = array_key_exists("Presion_alta",$_POST) ? $_POST['Presion_alta'] : "0";
-  $Presion_alta = $Presion_alta == "" ? "0" : $Presion_alta;
-  $Fatiga = array_key_exists("Fatiga",$_POST) ? $_POST['Fatiga'] : "0";
-  $Fatiga = $Fatiga == "" ? "0" : $Fatiga;
-  $Garraspera = array_key_exists("Garraspera",$_POST) ? $_POST['Garraspera'] : "0";
-  $Garraspera = $Garraspera == "" ? "0" : $Garraspera;
-  $fecha = $_POST['fecha'];
+  <title>Formulario de Registro de Paciente</title>
+</head>
+<body>
 
+<h1>Registro de Paciente</h1>
 
-  if (strlen($nombre) <= 3 || strlen($apellido) <= 3) {
-    echo "Ingrese un nombre y apellido de al menos 3 caracteres.";
-    exit;
-  }
-
-
-  if (empty($nombre) || empty($apellido) || empty($edad) || empty($talla) || empty($peso)) {
-    echo "Todos los campos son obligatorios." ;
-  }
-  if($tos== 1 || $fiebre == 1 || $disnea==1 || $dolor_muscular==1 ||
-  $gripe == 1 || $Presion_alta==1 || $Fatiga==1 || $Garraspera==1) {
-    $resultado = "1";
-  }
-  else {
-    $resultado ="0";
-  }
-  $servername = "localhost";
-  $username = "root";
-  $password ="root";  
-  $dbname = "base_covid";  
-  try{
-    
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
-    $conn->beginTransaction();
-    $sql="INSERT INTO `pacientes` (`nombres`, `apellidos`,
-    `edad`, `talla_m`, `peso_kg`, `sintoma_tos`,
-    `sintoma_fiebre`, `sintoma_disnea`, `sintoma_dolormuscular`,
-    `sintoma_gripe`, `sintoma_presionalta`, `sintoma_fatiga`,
-      `sintoma_garraspera`, `ultima_fecha_vacunacion`, `resultado`)
-      VALUES ('$nombre', '$apellido', $edad, $talla, $peso, 
-      '$tos', '$fiebre', '$disnea', '$dolor_muscular','$gripe'
-      , '$Presion_alta', '$Fatiga', '$Garraspera', '$fecha', '$resultado');";
-    $conn->exec($sql); 
-
-    $ultimo_id = $conn->lastInsertId();
-    $consulta = $conn->query("SELECT * FROM pacientes WHERE id = $ultimo_id");
-    $fila = $consulta->fetch(PDO::FETCH_ASSOC);
-    $conn->commit();
-    echo "Fue registrado correctamente. Última fila insertada: " . json_encode($fila);
-
-   
-
-
-    
-  }
-  catch(Exception $e) {
-    $conn->rollBack();
-
-
-    echo "Error : ".$e->getMessage();
-  }
-
-}
-
-?>
+  <form id="formulario" action="21-pdo-post.php" method="post">  
+    <label for ="nombre">Nombres:</label>
+    <input type="text" id="nombre" name="nombre" required><br>
+    <label for= "apellido">Apellidos:</label>
+    <input type ="text" id="apellido" name="apellido"><br>
+    <label for="edad">Edad :</label>
+    <input type="text" id="edad" name="edad" required /><br>
+    <label for="talla">Talla(cm):</label>
+    <input type="text" id="talla" name="talla" required /><br>
+    <label for="peso">Peso (kg):</label>
+    <input type="text" id="peso" name="peso"><br>
+    <h2><u>Sintomas</u></h2>
+    <input type="checkbox" name="tos" id="tos"value="1">
+    <label for="tos">Tos</label><br>
+    <input type="checkbox" name="fiebre" id="fiebre"value="1">
+    <label for="fiebre">Fiebre</label><br>
+    <input type="checkbox" name="disnea" id="disnea"value="1">
+    <label for="disnea">Disnea</label><br>
+    <input type="checkbox" id = dolor_muscular name ="dolor_muscular"value="1">
+    <label for="dolor_muscular">Dolor muscular</label><br>
+    <input type="checkbox" id="gripe" name="gripe"value="1">
+    <label for="gripe">Gripe</label><br>
+    <input type="checkbox" id="Presion_alta" name ="Presion_alta"value="1">
+    <label for="Presion_alta">Presion Alta</label><br>  
+    <input type="checkbox" id="Fatiga" name="Fatiga"value="1">
+    <label for="Fatiga">Fatiga</label><br>
+    <input type="checkbox" id="Garraspera" name="Garraspera"value="1">
+    <label for="Garraspera">Garraspera</label><br>
+    <label for="fecha">**Fecha de vacunacion:**</label>
+    <input type="date" id="fecha" name="fecha">
+    <div class="Botones">
+      <br>
+      <button type="submit">Guardar</button>
+      <button>Cancelar</button>
+    </div>
+  </form>  

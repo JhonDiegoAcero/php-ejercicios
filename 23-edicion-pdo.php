@@ -1,17 +1,15 @@
-
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Formulario de Registro de Paciente</title>
+  <title>Formulario de Edicion de Paciente</title>
 </head>
 <body>
 
-<h1>Registro de Paciente</h1>
+<h1>Edicion de Paciente</h1>
 
   <form id="formulario" action="21-pdo-post.php" method="post">  
     <label for ="nombre">Nombres:</label>
@@ -45,7 +43,9 @@
     <input type="date" id="fecha" name="fecha">
     <div class="Botones">
       <br>
-      <button type="submit">Guardar</button>
-      <button>Cancelar</button>
+      <button type="submit">Editar</button>
+      <button>Eliminar</button>
     </div>
   </form>  
+</body>
+</html
