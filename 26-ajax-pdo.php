@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $nombre = $_POST["nombre"];
-        $dns="mysql:host=localhost;dbname=covid";
+        $dns="mysql:host=localhost;dbname=base_covid";
         $user="root";//user : usuario
         $pass="root";//pass : clave de usuario
         $db = new PDO($dns, $user, $pass);
