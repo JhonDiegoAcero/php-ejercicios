@@ -2,12 +2,12 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $nombre = $_POST["nombre"];
-        $dns="mysql:host=localhost;dbname=base_covid";
+        $dns="mysql:host=localhost;dbname=covid";
         $user="root";//user : usuario
         $pass="root";//pass : clave de usuario
         $db = new PDO($dns, $user, $pass);
         $pacientes = $db->query("
-        SELECT * FROM pcientes
+        SELECT * FROM pacientes
         where nombres like '%$nombre%'");
         $resultado=[];
         foreach ($pacientes as $row) {
