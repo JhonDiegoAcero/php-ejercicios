@@ -43,8 +43,20 @@
                     aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <label for="name" class="form-label">Nombre:</label>
+                <label for="nombre2" class="form-label">Nombre:</label>
                     <input type="text" class="form-control" id="nombre2" name="nombre2"/>
+                    <label for="edad" class="form-label">Edad:</label>
+                    <input type="text" class="form-control" id="edad2" name="edad2"/>
+                    <label for="talla" class="form-label">Talla:</label>
+                    <input type="text" class="form-control" id="talla2" name="talla2"/>
+                    <label for="peso" class="form-label">Peso:</label>
+                    <input type="text" class="form-control" id="peso2" name="peso2"/>
+                    <label for="tos" class="form-label">Tos:</label>
+                    <input type="text" class="form-control" id="tos2" name="tos2"/>
+                    <label for="fiebre" class="form-label">Fiebre:</label>
+                    <input type="text" class="form-control" id="fiebre2" name="fiebre2"/>
+                    <label for="disnea" class="form-label">Disnea:</label>
+                    <input type="text" class="form-control" id="disnea2" name="disnea2"/>
                 </div>
             </div>
         </div>
