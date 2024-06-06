@@ -43,20 +43,40 @@
                     aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <label for="nombre2" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre2" name="nombre2"/>
-                    <label for="edad" class="form-label">Edad:</label>
-                    <input type="text" class="form-control" id="edad2" name="edad2"/>
-                    <label for="talla" class="form-label">Talla:</label>
-                    <input type="text" class="form-control" id="talla2" name="talla2"/>
-                    <label for="peso" class="form-label">Peso:</label>
-                    <input type="text" class="form-control" id="peso2" name="peso2"/>
+                   <label for="nombre2" class="form-label">Nombre:</label>
+                   <input type="text" class="form-control" id="nombre2" name="nombre2"/>
+                </div>
+                <div class="modal-body">
+                   <label for="edad" class="form-label">Edad:</label>
+                   <input type="text" class="form-control" id="edad3" name="edad3"/>
+                </div>
+                <div class="modal-body">
+                   <label for="talla" class="form-label">Talla:</label>
+                   <input type="text" class="form-control" id="talla4" name="talla4"/>
+                </div>
+                <div class="modal-body">
+                   <label for="talla" class="form-label">Peso:</label>
+                   <input type="text" class="form-control" id="peso5" name="peso5"/>
+                </div>
+                <div class="modal-body">
+                <h5>Síntomas</h5>
+                </div>
+                <div class="modal-body">
                     <label for="tos" class="form-label">Tos:</label>
-                    <input type="text" class="form-control" id="tos2" name="tos2"/>
+                    <input type="checkbox" class="form-check-input" id="tos6" name="tos6"/>
+                </div>
+                <div class="modal-body">
                     <label for="fiebre" class="form-label">Fiebre:</label>
-                    <input type="text" class="form-control" id="fiebre2" name="fiebre2"/>
+                    <input type="checkbox" class="form-check-input" id="fiebre7" name="fiebre7"/>
+                </div>
+                <div class="modal-body">
                     <label for="disnea" class="form-label">Disnea:</label>
-                    <input type="text" class="form-control" id="disnea2" name="disnea2"/>
+                    <input type="checkbox" class="form-check-input" id="disnea8" name="disnea8"/>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-primary" onclick="actualizar();">Guardar</button>&nbsp;
+                    <button type="button" class="btn btn-secondary" onclick="cancelar();"  data-bs-dismiss="modal">Cancelar</button>
+                </div>
                 </div>
             </div>
         </div>

@@ -32,18 +32,47 @@ function agregarFilas(id,paciente) {
     "<td>"+paciente.sintoma_tos+"</td>"+
     "<td>"+paciente.sintoma_fiebre+"</td>"+
     "<td>"+paciente.sintoma_disnea+"</td>"+
-    "<td><button type='button' onclick=editar('"+paciente.nombres+"','"+paciente.edad+"');>Editar</button></td>"+
+    "<td><button type='button' onclick=editar('"+paciente.nombres+"','"+paciente.edad+"','"+paciente.talla_m+"','"+paciente.peso_kg+"','"+paciente.sintoma_tos+"','"+paciente.sintoma_fiebre+"','"+paciente.sintoma_disnea+"');>Editar</button></td>"+
     "</tr>";
     $(id+" tr:last").after(html);
 }
  
-function editar(nombres,edad,talla,peso,tos,fiebre) {
+function editar(nombres,edad,talla_m,peso_kg,sintoma_tos,sintoma_fiebre,sintoma_disnea) {
     $('#exampleModal').modal('show'); 
     $("#nombre2").val(nombres);
-    $("#edad2").val(edad);
-    $("#talla2").val(talla);
-    $("#peso2").val(peso);
-    $("#tos2").val(tos);
-    $("#fiebre2").val(fiebre);
+    $("#edad3").val(edad);
+    $("#talla4").val(talla_m);
+    $("#peso5").val(peso_kg);
+    $("#tos6").prop('checked', sintoma_tos === '1' || sintoma_tos === true);
+    $("#fiebre7").prop('checked', sintoma_fiebre === '1' || sintoma_fiebre === true);
+    $("#disnea8").prop('checked', sintoma_disnea === '1' || sintoma_disnea === true);
 }
+
+ 
+function actualizar() {
+    const $nombre = $("#nombre2").val();
+   
+    let datos ={
+        nombre : $nombre
+    };
+    $.ajax({
+        url :"26.1-update-ajax-pdo.php",
+        type : "post",
+        data : datos,
+        success : function(result) {              
+            alert("Se guardo los datos correctamente de "+result);            
+        }
+    })
+ 
+ 
+    return;
+}
+ 
+function cancelar() {
+    $('#exampleModal').modal('hide');    
+}
+
+
+
+
 
