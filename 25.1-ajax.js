@@ -37,12 +37,12 @@ function agregarFilas(id,paciente) {
     $(id+" tr:last").after(html);
 }
  
-function editar(nombres,edad) {
+function editar(nombres,edad,talla,peso,tos,fiebre) {
     $('#exampleModal').modal('show'); 
     $("#nombre2").val(nombres);
     $("#edad2").val(edad);
-    $("#talla2").val(tallas);
-    $("#peso2").val(pesos);
+    $("#talla2").val(talla);
+    $("#peso2").val(peso);
     $("#tos2").val(tos);
     $("#fiebre2").val(fiebre);
 }
